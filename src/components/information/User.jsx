@@ -1,15 +1,12 @@
 import React from "react";
-import { NavBar } from "../navBar/navBar";
-
+import { NavBar } from "../navBar/NavBar";
+import "./Information.css";
+import { Table } from "./Table";
 export const User = () => {
   return (
     <div className="User">
       <NavBar />
-      <img
-        src="./src/assets/Seele.jpeg"
-        alt="banner image"
-        className="banner-image"
-      />
+      <Table />
     </div>
   );
 };

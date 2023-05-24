@@ -1,0 +1,7 @@
+html,
+body {
+    height: 2000px;
+    /* Set a taller height */
+    overflow-y: scroll;
+    /* Enable vertical scrolling */
+}
