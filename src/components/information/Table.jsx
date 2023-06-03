@@ -132,6 +132,18 @@ export const Table = () => {
                 </td>
               </tr>
               <tr>
+                <td>1</td>
+                <td>Honda Accord</td>
+                <td>Honda</td>
+                <td>29A-12345</td>
+                <td>
+                  <p class="status signed">Signed</p>
+                </td>
+                <td>
+                  <strong>Seele Vollerei</strong>
+                </td>
+              </tr>
+              <tr>
                 <td>2</td>
                 <td>Toyota Camry</td>
                 <td>Toyota</td>

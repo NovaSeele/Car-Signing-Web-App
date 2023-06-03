@@ -10,13 +10,15 @@ body {
     background-color: #f3f3f3;
 }
 
-.UserInfo {
+.UserInfo,
+.CarInfo,
+.RegCenter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    height: 60%;
+    height: 70%;
     display: flex;
     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
 }
@@ -33,6 +35,7 @@ body {
     color: #fff;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .left img {
@@ -72,6 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .data {
@@ -87,6 +91,12 @@ body {
     font-size: 13px;
     margin-bottom: 10px;
     color: #919aa3;
+}
+
+.data .dataHover:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #01a9ac;
 }
 
 .contact-icon {

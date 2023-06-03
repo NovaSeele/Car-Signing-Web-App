@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 import { NavBar } from "../navBar/NavBar";
 import "./Info.css";
 
-export const UserInfo = () => {
+export const RegistrationCenter = () => {
   return (
-    <div className="UserInfo">
+    <div className="RegCenter">
       <div className="left-info">
         <img src="https://i.imgur.com/m7MiPOa.jpg" alt="user" width="100" />
         <h4>Name</h4>
@@ -12,37 +13,33 @@ export const UserInfo = () => {
       </div>
       <div className="right-info">
         <div className="info">
-          <h3>Information</h3>
+          <h3>Trung tâm đăng kiểm Honkai</h3>
           <div className="info_data">
             <div className="data">
               <h4>Địa chỉ</h4>
-              <p>Địa chỉ nhà</p>
+              <p>Địa chỉ nào đó</p>
             </div>
             <div className="data">
-              <h4>Email</h4>
-              <p>novaseele@gmail.com</p>
+              <h4>Ngày thành lập</h4>
+              <p>Ngày</p>
             </div>
             <div className="data">
-              <h4>Thông tin khác</h4>
-              <p>Các thông tin khác</p>
+              <h4>Số xe đã đăng kiểm</h4>
+              <p>Xe</p>
+            </div>
+            <div className="data">
+              <h4>Giờ làm việc</h4>
+              <p>8AM - 17PM</p>
+            </div>
+            <div className="data">
+              <h4>Giấy phép hoạt động</h4>
+              <p>
+                Link giấy phép đăng kiểm ném vào đây{" "}
+                {/* Ném ảnh giấy phép đăng kiểm vào đây thay cho thẻ này */}
+              </p>
             </div>
           </div>
         </div>
-
-        <div className="info_data">
-          <h3>Car</h3>
-          <div className="info_data">
-            <div className="data">
-              <h4>Danh sách xe</h4>
-              <p>Car Detail</p>
-            </div>
-            <div className="data">
-              <h4>Nơi đăng kiểm</h4>
-              <p>Chi tiết</p>
-            </div>
-          </div>
-        </div>
-
         <div className="contact">
           <h3>Thông tin liên hệ</h3>
 
@@ -55,6 +52,9 @@ export const UserInfo = () => {
             </li>
             <li>
               <i class="ri-phone-fill"></i>
+            </li>
+            <li>
+              <i class="ri-mail-fill"></i>
             </li>
           </ul>
         </div>
