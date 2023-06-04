@@ -6,3 +6,5 @@ Trong thẻ div chính, import component vào xong
 div <Tên Component /> div
 
 Tham khảo Home.jsx có mẫu
+
+Cái Car.jsx chứa components Table chưa fix lại tên 
