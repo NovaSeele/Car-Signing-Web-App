@@ -17,25 +17,7 @@ body {
     z-index: -1;
 }
 
-.LoginPage {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 7rem;
-    padding: 0 2rem;
-}
-
-.SignUp {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 7rem;
-    padding: 0 2rem;
-}
-
-.ForgotPassword {
+.Page {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -235,15 +217,7 @@ a:hover {
 
 
 @media screen and (max-width: 1050px) {
-    .LoginPage {
-        grid-gap: 5rem;
-    }
-
-    .SignUp {
-        grid-gap: 5rem;
-    }
-
-    .ForgotPassword {
+    .Page {
         grid-gap: 5rem;
     }
 }
@@ -264,15 +238,7 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
-    .LoginPage {
-        grid-template-columns: 1fr;
-    }
-
-    .SignUp {
-        grid-template-columns: 1fr;
-    }
-
-    .ForgotPassword {
+    .Page {
         grid-template-columns: 1fr;
     }
 

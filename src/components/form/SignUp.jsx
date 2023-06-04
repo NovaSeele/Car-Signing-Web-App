@@ -36,7 +36,7 @@ export const SignUp = () => {
   }, []);
 
   return (
-    <div className="SignUp">
+    <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
         <form>
@@ -93,7 +93,6 @@ export const SignUp = () => {
             </div>
           </div>
 
-          
           {/*Create Account*/}
           {/* <input type="submit" className="btn" value="Login" /> */}
           <button className="btn" type="submit">

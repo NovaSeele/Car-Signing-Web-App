@@ -36,7 +36,7 @@ export const LoginPage = () => {
   }, []);
 
   return (
-    <div className="LoginPage">
+    <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
         <form>
