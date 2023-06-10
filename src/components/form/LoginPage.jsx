@@ -36,10 +36,10 @@ export const LoginPage = () => {
   }, []);
 
   return (
-    <div className="LoginPage">
+    <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
-        <form>
+        <form className="login-form-content">
           {/* Icon Image here */}
           <h2 className="title">Welcome </h2>
           {/*User Name*/}
@@ -47,7 +47,7 @@ export const LoginPage = () => {
             <div className="i">
               <i className="ri-user-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Username</h5>
               <input type="text" className="input" required />
             </div>
@@ -57,7 +57,7 @@ export const LoginPage = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Password</h5>
               <input type="password" className="input" required />
             </div>

@@ -36,10 +36,10 @@ export const ForgotPassword = () => {
   }, []);
 
   return (
-    <div className="ForgotPassword">
+    <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
-        <form>
+        <form className="login-form-content">
           {/* Icon Image here */}
           <h2 className="title">Welcome</h2>
           {/*User Name*/}
@@ -47,7 +47,7 @@ export const ForgotPassword = () => {
             <div className="i">
               <i className="ri-user-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Username</h5>
               <input type="text" className="input" required />
             </div>
@@ -57,7 +57,7 @@ export const ForgotPassword = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>OTP</h5>
               <input type="text" className="input" required />
             </div>
@@ -67,7 +67,7 @@ export const ForgotPassword = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>New Password</h5>
               <input type="password" className="input" required />
             </div>
@@ -77,7 +77,7 @@ export const ForgotPassword = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Confirm Password</h5>
               <input type="password" className="input" required />
             </div>

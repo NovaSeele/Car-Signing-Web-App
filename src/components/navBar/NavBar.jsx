@@ -14,12 +14,11 @@ export const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-
   return (
     <div className="navBar">
       <div className="logo">
         <i className="ri-home-3-line"></i>
-        <span>App Name</span>
+        <span>RegistryTotal</span>
       </div>
 
       <ul className="left-nav">
@@ -30,21 +29,33 @@ export const NavBar = () => {
           </Link>
         </li>
         <li>
-          {/* Search - Link to search */}
-          <Link to="/">
-            <span>Contact</span>
+          {/* Search - Link to userinfo */}
+          <Link to="/userinfo">
+            <span>User Info</span>
           </Link>
         </li>
         <li>
-          {/* Search - Link to search */}
-          <Link to="/user">
-            <span>User</span>
+          {/* Search - Link to carinfo */}
+          <Link to="/carinfo">
+            <span>Car Info</span>
           </Link>
         </li>
         <li>
-          {/* Search - Link to search */}
+          {/* Search - Link to regCenterInfo */}
+          <Link to="/registrationcenter">
+            <span>RegistrationCenter</span>
+          </Link>
+        </li>
+        <li>
+          {/* Table - Link to Table */}
           <Link to="/car">
             <span>Car</span>
+          </Link>
+        </li>
+        <li>
+          {/* Table - Link to Table */}
+          <Link to="/form">
+            <span>Form</span>
           </Link>
         </li>
       </ul>
@@ -65,8 +76,6 @@ export const NavBar = () => {
       <div className="menu-icon" onClick={handleMenuClick}>
         <i className="bx bx-menu"></i>
       </div>
-
-      
     </div>
   );
 };
