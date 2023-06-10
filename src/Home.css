@@ -1,10 +1,315 @@
-.banner-image {
-    width: 100%;
-    /* background-image: url("./assets/banner.jpg"); */
+.section-content {
+    margin-top: 150px;
+    width: auto;
+    height: auto;
+    position: static;
+    display: block;
+}
+
+.intro-header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: 620;
+    cursor: auto;
+    margin-bottom: 100px;
+}
+
+.intro-content {
+    display: block;
+    height: auto;
+    max-width: 1140px;
+    overflow: visible;
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-jumbo {
+    margin: 20px 0px 20px 0px;
+    font-size: 64px;
+    font-weight: 80px;
+    position: static;
+}
+
+.p-bigger {
+    position: static;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 34px;
+}
+
+
+.main-content {
+    width: auto;
+    overflow: visible;
+    background-color: aqua;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.relax-content {
     background-color: aquamarine;
-    background-repeat: no-repeat;
-    height: 200px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 85px;
     margin-left: auto;
     margin-right: auto;
-    object-fit: contain;
+    width: 80%;
+}
+
+.relax-header {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+.p-smaller {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 36px;
+    font-weight: 50px;
+}
+
+.home-content {
+    margin: 80px 120px;
+    background-color: aquamarine;
+}
+
+.grid-content-left {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin-bottom: 80px;
+
+    grid-template-columns: 1fr 2fr;
+
+    grid-gap: 80px;
+
+}
+
+.grid-content-right {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    grid-template-columns: 2fr 1fr;
+
+    grid-gap: 80px;
+
+}
+
+.block-text {
+    margin-bottom: 30px;
+}
+
+.about {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+.block-main-text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 50px;
+}
+
+.block-button-div {
+    padding: 25px 12px;
+}
+
+.left-block {
+    background-color: blueviolet;
+    grid-gap: 80px;
+    width: auto;
+    text-align: left;
+    justify-content: center;
+}
+
+.right-block {
+    background-color: brown;
+    grid-gap: 80px;
+    width: auto;
+    text-align: right;
+    justify-content: center;
+}
+
+.image-block-left {
+    background-color: cadetblue;
+
+}
+
+.image-block-right {
+    background-color: chartreuse;
+}
+
+.footer-distributed {
+    background: #666;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer-distributed h3 span {
+    color: lightseagreen;
+}
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #222;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    /* background-color: #33383b; */
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 400;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    /* color: lightseagreen; */
+    text-decoration: none;
+}
+
+.footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight: 300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+    content: none;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+    .footer-distributed {
+        font: bold 14px sans-serif;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
 }

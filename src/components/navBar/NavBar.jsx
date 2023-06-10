@@ -14,12 +14,11 @@ export const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-
   return (
     <div className="navBar">
       <div className="logo">
         <i className="ri-home-3-line"></i>
-        <span>App</span>
+        <span>RegistryTotal</span>
       </div>
 
       <ul className="left-nav">
@@ -54,9 +53,9 @@ export const NavBar = () => {
           </Link>
         </li>
         <li>
-          {/* Search - Link to search */}
-          <Link to="/carregistration">
-            <span>Car Reg</span>
+          {/* Table - Link to Table */}
+          <Link to="/form">
+            <span>Form</span>
           </Link>
         </li>
       </ul>

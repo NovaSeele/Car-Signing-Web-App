@@ -39,7 +39,7 @@ export const SignUp = () => {
     <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
-        <form>
+        <form className="login-form-content">
           {/* Icon Image here */}
           <h2 className="title">Sign Up</h2>
           {/*User Name*/}
@@ -47,7 +47,7 @@ export const SignUp = () => {
             <div className="i">
               <i className="ri-user-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Username</h5>
               <input type="text" className="input" required />
             </div>
@@ -57,7 +57,7 @@ export const SignUp = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Password</h5>
               <input type="password" className="input" required />
             </div>
@@ -67,7 +67,7 @@ export const SignUp = () => {
             <div className="i">
               <i className="ri-lock-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Re-Confirm Password</h5>
               <input type="password" className="input" required />
             </div>
@@ -77,7 +77,7 @@ export const SignUp = () => {
             <div className="i">
               <i className="ri-mail-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Email</h5>
               <input type="email" className="input" required />
             </div>
@@ -87,7 +87,7 @@ export const SignUp = () => {
             <div className="i">
               <i className="ri-phone-fill" />
             </div>
-            <div className="div">
+            <div className="input-container">
               <h5>Phone Number</h5>
               <input type="phone" className="input" required />
             </div>

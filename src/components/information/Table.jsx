@@ -13,9 +13,14 @@ export const Table = () => {
     function searchTable() {
       table_rows.forEach((row, i) => {
         let table_data = row.textContent.toLowerCase();
-        let search_data = search.value.toLowerCase();
+        let search_value = search.value.toLowerCase();
+        let search_labels = search_value.split(" ");
 
-        row.classList.toggle("hide", table_data.indexOf(search_data) < 0);
+        let isMatch = search_labels.every((label) => {
+          return table_data.indexOf(label) > -1;
+        });
+
+        row.classList.toggle("hide", !isMatch);
         row.style.setProperty("--delay", i / 25 + "s");
       });
 
@@ -26,6 +31,7 @@ export const Table = () => {
             i % 2 === 0 ? "transparent" : "#0000000b";
         });
     }
+
 
     // 2. Sorting | Ordering data of HTML table
     table_headings.forEach((head, i) => {

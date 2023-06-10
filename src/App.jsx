@@ -1,10 +1,9 @@
 import { Home } from "./Home";
-
+import "./App.css";
 //form folder import
 import { LoginPage } from "./components/form/LoginPage";
 import { ForgotPassword } from "./components/form/ForgotPassword";
 import { SignUp } from "./components/form/SignUp";
-import { CarRegistration } from "./components/form/CarRegistration";
 
 import { NavBar } from "./components/navBar/NavBar";
 
@@ -14,11 +13,14 @@ import { RegistrationCenter } from "./components/information/RegistrationCenter"
 
 import { Car } from "./components/information/Car";
 
+import { RegForm } from "./components/form input/RegForm";
+
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,7 +32,7 @@ function App() {
           <Route path="/userinfo" element={<UserInfo />} />
           <Route path="/carinfo" element={<CarInfo />} />
           <Route path="/registrationcenter" element={<RegistrationCenter />} />
-          <Route path="/carregistration" element={<CarRegistration />} />
+          <Route path="/form" element={<RegForm />} />
         </Routes>
       </Router>
     </div>
