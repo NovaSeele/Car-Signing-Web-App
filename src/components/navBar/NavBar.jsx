@@ -32,7 +32,7 @@ export const NavBar = () => {
         if (response.ok) {
           const userData = await response.json();
           console.log(userData);
-          setName(userData[0].first_name + " " + userData[0].last_name);
+          setName(userData[0].email);
         } else {
           // Handle error response
           // For example, if the token is invalid or expired
