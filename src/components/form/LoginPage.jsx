@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./FormType.css";
 
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 
 export const LoginPage = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // Define the function to handle focus event
   const handleFocus = (event) => {
     let parent = event.target.parentNode.parentNode;
@@ -18,6 +21,33 @@ export const LoginPage = () => {
     }
   };
 
+  // fetch jwt token
+  const fetchToken = async (credentials) => {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/login/`,{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials)
+    }).then((response) => response.json());
+    return response;
+  }
+
+  // handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const [email, password] = e.target.elements;
+    const credentials = {
+      email: email.value,
+      password: password.value
+    }
+    const response = await fetchToken(credentials);
+    console.log(response);
+    if (response.access) { // if token is returned
+      localStorage.setItem("access", response.access);
+      window.location.href = "/";
+    }
+  }
   // Attach focus and blur event listeners to inputs when the component mounts
   useEffect(() => {
     const inputs = document.querySelectorAll(".input");
@@ -39,7 +69,7 @@ export const LoginPage = () => {
     <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
-        <form className="login-form-content">
+        <form className="login-form-content" onSubmit={handleSubmit}>
           {/* Icon Image here */}
           <h2 className="title">Welcome </h2>
           {/*User Name*/}
@@ -49,7 +79,7 @@ export const LoginPage = () => {
             </div>
             <div className="input-container">
               <h5>Username</h5>
-              <input type="text" className="input" required />
+              <input id="email" name="email" type="text" className="input" required onChange={e => setEmail(e.target.value)}/>
             </div>
           </div>
           {/*Password*/}
@@ -59,7 +89,7 @@ export const LoginPage = () => {
             </div>
             <div className="input-container">
               <h5>Password</h5>
-              <input type="password" className="input" required />
+              <input id="password" name="password" type="password" className="input" required onChange={e => setPassword(e.target.value)}/>
             </div>
           </div>
           {/*Forgot Password*/}
@@ -67,10 +97,8 @@ export const LoginPage = () => {
             Forgot Password
           </Link>
           {/*Login Button*/}
-          <button className="btn">
-            <Link to="/home" className="button-text">
-              Login
-            </Link>
+          <button className="btn" type="submit">
+            <div className="button-text">Login</div>
           </button>
           {/*Sign Up*/}
           <Link to="/signup" className="right-text">

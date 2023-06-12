@@ -1,10 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState(false);
+
+  const loggedIn = () => {
+    if (localStorage.getItem("access")) {
+      return true;
+    }
+    return false;
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("access");
+    window.location.href = "/";
+  }
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/user/me/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access")}`,
+            "Content-Type": "application/json",
+          },
+        });
+        
+        if (response.ok) {
+          const userData = await response.json();
+          console.log(userData);
+          setName(userData[0].first_name + " " + userData[0].last_name);
+        } else {
+          // Handle error response
+          // For example, if the token is invalid or expired
+          // You can redirect to the login page or display an error message
+        }
+      } catch (error) {
+        console.log("Error fetching user data:", error);
+      }
+    };
+
+    if (loggedIn()) {
+      fetchUserName();
+    }
+  }, []);
 
   const handleMenuClick = () => {
     const menuIcon = document.querySelector(".menu-icon i");
@@ -69,16 +111,26 @@ export const NavBar = () => {
       </ul>
 
       <div className="right-nav">
-        {/* Login with logo - Link to login */}
-        <i className="ri-user-fill"></i>
-        <Link to="/login">
-          <span>Login</span>
-        </Link>
+        {!loggedIn() ? (
+          <>
+            <i className="ri-user-fill"></i>
+            <Link to="/login">
+              <span>Login</span>
+            </Link>
 
-        {/* SignUp - Link to signup */}
-        <Link to="/signup">
-          <span>SignUp</span>
-        </Link>
+            <Link to="/signup">
+              <span>SignUp</span>
+            </Link>
+          </>
+        ):(
+          <>
+            <i className="ri-user-fill"></i>
+            {/* show user's name from api */}
+            <span>{name}</span>
+            {/* log out */}
+            <Link to="#" onClick={handleLogout}><span>Log out</span></Link>
+          </>
+        )}
       </div>
 
       <div className="menu-icon" onClick={handleMenuClick}>
