@@ -28,18 +28,18 @@ export const NavBar = () => {
             <span>Home</span>
           </Link>
         </li>
-        <li>
-          {/* Search - Link to userinfo */}
+        {/* <li>
+          
           <Link to="/userinfo">
             <span>User Info</span>
           </Link>
         </li>
         <li>
-          {/* Search - Link to carinfo */}
+          
           <Link to="/carinfo">
             <span>Car Info</span>
           </Link>
-        </li>
+        </li> */}
         <li>
           {/* Search - Link to regCenterInfo */}
           <Link to="/registrationcenter">
@@ -48,14 +48,21 @@ export const NavBar = () => {
         </li>
         <li>
           {/* Table - Link to Table */}
-          <Link to="/car">
-            <span>Car</span>
+          <Link to="/infotable">
+            <span>Thống kê</span>
           </Link>
         </li>
-        <li>
-          {/* Table - Link to Table */}
+        {/* <li>
+          
           <Link to="/form">
             <span>Form</span>
+          </Link>
+        </li> */}
+
+        <li>
+          {/* Table - Link to Table */}
+          <Link to="/formmain">
+            <span>Khai Báo</span>
           </Link>
         </li>
       </ul>

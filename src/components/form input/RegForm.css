@@ -1,3 +1,17 @@
+.FormMain {
+    max-width: 700px;
+    width: 100%;
+    margin-top: 200px
+}
+
+.CompanyForm {
+    margin-top: 700px;
+}
+
+.OwnerForm {
+    margin-top: 700px;
+}
+
 .registration-main {
     max-width: 700px;
     width: 100%;
@@ -5,6 +19,10 @@
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .registration-title {
@@ -71,13 +89,14 @@
     justify-content: space-between;
 }
 
-.reg-form-content .category label {
+.category label {
     display: flex;
     align-items: center;
     cursor: pointer;
+    flex-direction: row;
 }
 
-.reg-form-content .category label .dot {
+.category label .dot {
     height: 18px;
     width: 18px;
     border-radius: 50%;
@@ -95,16 +114,16 @@
     border-color: #d9d9d9;
 }
 
-.reg-form-content input[type="radio"] {
+input[type="radio"] {
     display: none;
 }
 
-.reg-form-content .registration-button {
+.registration-button {
     height: 45px;
     margin: 35px 0;
 }
 
-.reg-form-content .registration-button input {
+.registration-button input {
     height: 100%;
     width: 100%;
     border-radius: 5px;
@@ -150,4 +169,77 @@
     .registration-content .category {
         flex-direction: column;
     }
+}
+
+
+
+.warpper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 60%;
+    transform: translate(60%, 10%);
+
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px 2px;
+    background: #32557f;
+    display: inline-block;
+    color: #fff;
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0 0.5rem 0.8rem #00000080;
+    width: 25vh;
+    text-align: center;
+}
+
+.panels {
+    min-height: 200px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.panel {
+    display: none;
+    animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.panel-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.radio {
+    display: none;
+}
+
+#one:checked~.panels #one-panel,
+#two:checked~.panels #two-panel,
+#three:checked~.panels #three-panel {
+    display: block;
+}
+
+#one:checked~.tabs #one-tab,
+#two:checked~.tabs #two-tab,
+#three:checked~.tabs #three-tab {
+    background: #fff;
+    color: #000;
+    border-top: 3px solid #32557f;
 }
