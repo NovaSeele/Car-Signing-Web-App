@@ -204,7 +204,7 @@ export const Table = () => {
                 </td>
                 <td>29A-12345</td>
                 <td>
-                  <p class="status signed">Signed</p>
+                  <p className="status signed">Signed</p>
                 </td>
                 <td>7/2/2021</td>
                 <td>18/10/2023</td>
@@ -220,7 +220,7 @@ export const Table = () => {
                 </td>
                 <td>29A-12345</td>
                 <td>
-                  <p class="status pending">Pending</p>
+                  <p className="status pending">Pending</p>
                 </td>
                 <td>7/2/2021</td>
                 <td>18/10/2023</td>
@@ -236,7 +236,7 @@ export const Table = () => {
                 </td>
                 <td>29A-12345</td>
                 <td>
-                  <p class="status not-signed">Not Signed</p>
+                  <p className="status not-signed">Not Signed</p>
                 </td>
                 <td>7/2/2021</td>
                 <td>18/10/2023</td>

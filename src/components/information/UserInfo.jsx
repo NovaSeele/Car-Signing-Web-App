@@ -48,13 +48,13 @@ export const UserInfo = () => {
 
           <ul className="contact-icon">
             <li>
-              <i class="ri-facebook-fill"></i>
+              <i className="ri-facebook-fill"></i>
             </li>
             <li>
-              <i class="ri-messenger-fill"></i>
+              <i className="ri-messenger-fill"></i>
             </li>
             <li>
-              <i class="ri-phone-fill"></i>
+              <i className="ri-phone-fill"></i>
             </li>
           </ul>
         </div>
