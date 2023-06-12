@@ -42,14 +42,14 @@ export const SignUp = () => {
         <form className="login-form-content">
           {/* Icon Image here */}
           <h2 className="title">Sign Up</h2>
-          {/*User Name*/}
+          {/*Email*/}
           <div className="input-div">
             <div className="i">
-              <i className="ri-user-fill" />
+              <i className="ri-mail-fill" />
             </div>
             <div className="input-container">
-              <h5>Username</h5>
-              <input type="text" className="input" required />
+              <h5>Email</h5>
+              <input type="email" className="input" required />
             </div>
           </div>
           {/*Password*/}
@@ -70,16 +70,6 @@ export const SignUp = () => {
             <div className="input-container">
               <h5>Re-Confirm Password</h5>
               <input type="password" className="input" required />
-            </div>
-          </div>
-          {/*Email*/}
-          <div className="input-div">
-            <div className="i">
-              <i className="ri-mail-fill" />
-            </div>
-            <div className="input-container">
-              <h5>Email</h5>
-              <input type="email" className="input" required />
             </div>
           </div>
           {/*Phone Number*/}
