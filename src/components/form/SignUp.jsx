@@ -72,16 +72,6 @@ export const SignUp = () => {
               <input type="password" className="input" required />
             </div>
           </div>
-          {/*Phone Number*/}
-          <div className="input-div">
-            <div className="i">
-              <i className="ri-phone-fill" />
-            </div>
-            <div className="input-container">
-              <h5>Phone Number</h5>
-              <input type="phone" className="input" required />
-            </div>
-          </div>
 
           {/*Create Account*/}
           {/* <input type="submit" className="btn" value="Login" /> */}
