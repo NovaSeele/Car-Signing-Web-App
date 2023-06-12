@@ -14,10 +14,9 @@ export const FormMain = () => {
       <div className="intro-header">
         <div className="intro-content">
           <div className="intro-text">
-            <h1 className="header-jumbo">RegistryTotal-Statistical table</h1>
+            <h1 className="header-jumbo">RegistryTotal-Regist</h1>
             <p className="p-bigger">
-              Danh sách thông tin về các xe đã đằng kiểm, sắp đăng kiểm, hoặc
-              sắp hết hạn
+              Đăng ký thông tin xe của bạn ở đây
             </p>
           </div>
         </div>
