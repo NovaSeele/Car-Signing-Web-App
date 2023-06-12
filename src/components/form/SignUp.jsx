@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./FormType.css";
 
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 
 export const SignUp = () => {
+  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   // Define the function to handle focus event
   const handleFocus = (event) => {
     let parent = event.target.parentNode.parentNode;
@@ -15,6 +21,47 @@ export const SignUp = () => {
     let parent = event.target.parentNode.parentNode;
     if (event.target.value === "") {
       parent.classList.remove("focus");
+    }
+  };
+
+
+  const handleSignUp = async (e) => {
+    e.preventDefault(); // Prevent the form from submitting normally
+
+    // Check if the passwords match
+    if (password !== password2) {
+      setErrorMessage("Passwords do not match");
+      return;
+    }
+
+    try {
+      // Send a request to the backend to create a new user account
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/register/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      if (response.ok) {
+        // User account created successfully
+        console.log("Signup successful");
+        // Redirect to the login page
+        setErrorMessage("Signup successful, redirecting to login page");
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 2000);
+      } else {
+        // Error occurred during signup
+        const errorData = await response.json();
+        setErrorMessage(errorData.message);
+      }
+    } catch (error) {
+      setErrorMessage("Error occurred during signup");
     }
   };
 
@@ -39,7 +86,7 @@ export const SignUp = () => {
     <div className="Page">
       <div className="img">{/* Put image link here */}</div>
       <div className="login-content">
-        <form className="login-form-content">
+        <form className="login-form-content" onSubmit={handleSignUp}>
           {/* Icon Image here */}
           <h2 className="title">Sign Up</h2>
           {/*Email*/}
@@ -49,7 +96,7 @@ export const SignUp = () => {
             </div>
             <div className="input-container">
               <h5>Email</h5>
-              <input type="email" className="input" required />
+              <input type="email" className="input" required onChange={e => setEmail(e.target.value)}/>
             </div>
           </div>
           {/*Password*/}
@@ -59,7 +106,7 @@ export const SignUp = () => {
             </div>
             <div className="input-container">
               <h5>Password</h5>
-              <input type="password" className="input" required />
+              <input type="password" className="input" required onChange={e => setPassword(e.target.value)}/>
             </div>
           </div>
           {/*Re Confirm Pass*/}
@@ -69,16 +116,16 @@ export const SignUp = () => {
             </div>
             <div className="input-container">
               <h5>Re-Confirm Password</h5>
-              <input type="password" className="input" required />
+              <input type="password" className="input" required onChange={e => setPassword2(e.target.value)}/>
             </div>
           </div>
-
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           {/*Create Account*/}
           {/* <input type="submit" className="btn" value="Login" /> */}
           <button className="btn" type="submit">
-            <Link to="/login" className="button-text">
+            <div className="button-text">
               Create Account
-            </Link>
+            </div>
           </button>
           {/*Login*/}
           <Link to="/login" className="right-text">
