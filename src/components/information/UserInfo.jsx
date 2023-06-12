@@ -8,7 +8,7 @@ export const UserInfo = () => {
       <div className="left-info">
         <img src="https://i.imgur.com/m7MiPOa.jpg" alt="user" width="100" />
         <h4>Name</h4>
-        <p>Name's description</p>
+        <p>Name&apos;s description</p>
       </div>
       <div className="right-info">
         <div className="info">

@@ -22,7 +22,7 @@ export const Home = () => {
           <div className="relax-content">
             <label className="relax-header"></label>
             <p className="p-smaller">
-              Vietnam's leading registration management system
+              Vietnam&apos;s leading registration management system
             </p>
           </div>
           <div className="home-content">
