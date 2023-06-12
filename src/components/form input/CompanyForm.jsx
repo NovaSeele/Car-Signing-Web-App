@@ -80,7 +80,7 @@ export const CompanyForm = () => {
             </div>
           </form>
         </div>
-      </div>AKF
+      </div>
     </div>
   );
 }

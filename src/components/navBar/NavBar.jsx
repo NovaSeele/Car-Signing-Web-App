@@ -40,29 +40,30 @@ export const NavBar = () => {
             <span>Car Info</span>
           </Link>
         </li> */}
-        <li>
-          {/* Search - Link to regCenterInfo */}
+        {/* <li>
           <Link to="/registrationcenter">
             <span>RegistrationCenter</span>
           </Link>
-        </li>
+        </li> */}
         <li>
           {/* Table - Link to Table */}
           <Link to="/infotable">
-            <span>Thống kê</span>
+            <span>
+              Thống kê<i className="ri-bar-chart-fill"></i>
+            </span>
           </Link>
         </li>
         {/* <li>
-          
           <Link to="/form">
             <span>Form</span>
           </Link>
         </li> */}
-
         <li>
           {/* Table - Link to Table */}
           <Link to="/formmain">
-            <span>Khai Báo</span>
+            <span>
+              Khai Báo<i className="ri-survey-line"></i>
+            </span>
           </Link>
         </li>
       </ul>
