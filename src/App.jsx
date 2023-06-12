@@ -11,9 +11,14 @@ import { UserInfo } from "./components/information/UserInfo";
 import { CarInfo } from "./components/information/CarInfo";
 import { RegistrationCenter } from "./components/information/RegistrationCenter";
 
-import { Car } from "./components/information/Car";
 
+{/* Import thing in the form input file */}
 import { RegForm } from "./components/form input/RegForm";
+import { FormMain } from "./components/form input/FormMain";
+import { OwnerForm } from "./components/form input/OwnerForm";
+import { CompanyForm } from "./components/form input/CompanyForm";
+
+import { InfoTable } from "./components/Static/InfoTable";
 
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
@@ -24,7 +29,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/car" element={<Car />} />
+          <Route path="/infotable" element={<InfoTable />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/signup" element={<SignUp />} />
@@ -33,6 +38,9 @@ function App() {
           <Route path="/carinfo" element={<CarInfo />} />
           <Route path="/registrationcenter" element={<RegistrationCenter />} />
           <Route path="/form" element={<RegForm />} />
+          <Route path="/formmain" element={<FormMain />} />
+          <Route path="/ownerform" element={<OwnerForm />} />
+          <Route path="/companyform" element={<CompanyForm />} />
         </Routes>
       </Router>
     </div>

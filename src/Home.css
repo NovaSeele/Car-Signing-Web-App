@@ -13,7 +13,9 @@
     width: auto;
     height: 620;
     cursor: auto;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+
+    
 }
 
 .intro-content {
@@ -134,15 +136,6 @@
     width: auto;
     text-align: right;
     justify-content: center;
-}
-
-.image-block-left {
-    background-color: cadetblue;
-
-}
-
-.image-block-right {
-    background-color: chartreuse;
 }
 
 .footer-distributed {
