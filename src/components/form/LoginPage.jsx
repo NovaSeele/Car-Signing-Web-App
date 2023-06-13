@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./FormType.css";
 
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
-
 export const LoginPage = () => {
 
   const [email, setEmail] = useState("");
@@ -23,7 +22,7 @@ export const LoginPage = () => {
 
   // fetch jwt token
   const fetchToken = async (credentials) => {
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/login/`,{
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/login/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +66,9 @@ export const LoginPage = () => {
 
   return (
     <div className="Page">
-      <div className="img">{/* Put image link here */}</div>
+      <div className="img">
+        <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000" alt="Inspection Logo" />
+      </div>
       <div className="login-content">
         <form className="login-form-content" onSubmit={handleSubmit}>
           {/* Icon Image here */}
@@ -79,7 +80,7 @@ export const LoginPage = () => {
             </div>
             <div className="input-container">
               <h5>Username</h5>
-              <input id="email" name="email" type="text" className="input" required onChange={e => setEmail(e.target.value)}/>
+              <input id="email" name="email" type="text" className="input" required onChange={e => setEmail(e.target.value)} />
             </div>
           </div>
           {/*Password*/}
@@ -89,7 +90,7 @@ export const LoginPage = () => {
             </div>
             <div className="input-container">
               <h5>Password</h5>
-              <input id="password" name="password" type="password" className="input" required onChange={e => setPassword(e.target.value)}/>
+              <input id="password" name="password" type="password" className="input" required onChange={e => setPassword(e.target.value)} />
             </div>
           </div>
           {/*Forgot Password*/}

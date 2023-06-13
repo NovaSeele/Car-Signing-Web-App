@@ -37,7 +37,9 @@ export const ForgotPassword = () => {
 
   return (
     <div className="Page">
-      <div className="img">{/* Put image link here */}</div>
+      <div className="img">
+        <img src="https://img.freepik.com/free-vector/forgot-password-concept-illustration_114360-1123.jpg?w=2000" alt="" />
+      </div>
       <div className="login-content">
         <form className="login-form-content">
           {/* Icon Image here */}

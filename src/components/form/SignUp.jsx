@@ -84,7 +84,9 @@ export const SignUp = () => {
 
   return (
     <div className="Page">
-      <div className="img">{/* Put image link here */}</div>
+      <div className="img">
+        <img src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=2000" alt="" />
+      </div>
       <div className="login-content">
         <form className="login-form-content" onSubmit={handleSignUp}>
           {/* Icon Image here */}
