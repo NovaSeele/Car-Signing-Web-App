@@ -36,7 +36,7 @@ export const SignUp = () => {
 
     try {
       // Send a request to the backend to create a new user account
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/register`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/register/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

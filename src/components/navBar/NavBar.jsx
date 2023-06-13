@@ -12,23 +12,26 @@ export const NavBar = () => {
       return true;
     }
     return false;
-  }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("access");
     window.location.href = "/";
-  }
+  };
 
   useEffect(() => {
     const fetchUserName = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/user/me/`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access")}`,
-            "Content-Type": "application/json",
-          },
-        });
-        
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/inspection/user/me/`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("access")}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
         if (response.ok) {
           const userData = await response.json();
           console.log(userData);
@@ -70,23 +73,6 @@ export const NavBar = () => {
             <span>Home</span>
           </Link>
         </li>
-        {/* <li>
-          
-          <Link to="/userinfo">
-            <span>User Info</span>
-          </Link>
-        </li>
-        <li>
-          
-          <Link to="/carinfo">
-            <span>Car Info</span>
-          </Link>
-        </li> */}
-        {/* <li>
-          <Link to="/registrationcenter">
-            <span>RegistrationCenter</span>
-          </Link>
-        </li> */}
         <li>
           {/* Table - Link to Table */}
           <Link to="/infotable">
@@ -95,13 +81,8 @@ export const NavBar = () => {
             </span>
           </Link>
         </li>
-        {/* <li>
-          <Link to="/form">
-            <span>Form</span>
-          </Link>
-        </li> */}
+        {/* Table - Link to Table */}
         <li>
-          {/* Table - Link to Table */}
           <Link to="/formmain">
             <span>
               Khai Báo<i className="ri-survey-line"></i>
@@ -122,13 +103,15 @@ export const NavBar = () => {
               <span>SignUp</span>
             </Link>
           </>
-        ):(
+        ) : (
           <>
             <i className="ri-user-fill"></i>
             {/* show user's name from api */}
             <span>{name}</span>
             {/* log out */}
-            <Link to="#" onClick={handleLogout}><span>Log out</span></Link>
+            <Link to="#" onClick={handleLogout}>
+              <span>Log out</span>
+            </Link>
           </>
         )}
       </div>

@@ -34,7 +34,11 @@ export const CarForm = () => {
               </div>
               <div className="input-box">
                 <span className="registration-details">Chủ Sở Hữu</span>
-                <input type="text" placeholder="Nhập Tên Người Sở Hữu" required />
+                <input
+                  type="text"
+                  placeholder="Nhập Tên Người Sở Hữu"
+                  required
+                />
               </div>
             </div>
             <div className="gender-details">
@@ -54,11 +58,11 @@ export const CarForm = () => {
                 </label>
                 <label htmlFor="registration-dot-3">
                   <span className="dot three"></span>
-                  <span className="form-radio">Giấy tờ 3</span>
+                  <span className="form-radio">Giấy tờ 2</span>
                 </label>
                 <label htmlFor="registration-dot-4">
                   <span className="dot four"></span>
-                  <span className="form-radio">Giấy tờ 4</span>
+                  <span className="form-radio">Giấy tờ 2</span>
                 </label>
               </div>
             </div>

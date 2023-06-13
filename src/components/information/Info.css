@@ -1,14 +1,14 @@
 .UserInfo,
 .CarInfo,
 .RegCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 60%;
     height: 70%;
     display: flex;
+    transform: translate(35%, 50%);
+    justify-content: center;
     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
+    margin-bottom: 400px;
+    margin-top: -50px;
 }
 
 .left-info {
@@ -41,7 +41,7 @@
 
 .right-info{
     width: 65%;
-    background: #fff;
+    background: #f2f2f2;
     padding: 25px 25px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
