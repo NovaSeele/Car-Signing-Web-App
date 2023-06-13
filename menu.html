@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 60%;
+            height: 654px;
+            margin: auto;
+            background-color: darkslategrey;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .box-name {
+            font-size: 40px;
+            padding-top: 2.5rem;
+            color: white;
+            justify-content: center;
+            display: flex;
+        }
+
+        table {
+            position: absolute;
+            width: 80%;
+            top: 25%;
+            left: 10%;
+        }
+
+        th {
+            color: white;
+            left: 20%;
+            background-color: grey;
+            width: 20%;
+            padding: 0.75rem;
+        }
+
+        td {
+            color: white;
+            width: 20%;
+            padding: 0.5rem;
+            font-size: 17px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination {
+            position: absolute;
+            display: inline-block;
+            bottom: 50px;
+            left: 28%;
+        }
+
+        .pagination a {
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            color: black;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="box-name"><p>Name</p></div>
+    <table id="table">
+        <thead>
+        <th>From</th>
+        <th>Send</th>
+        <th>To</th>
+        <th>Receive</th>
+        <th>Time</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Ethereum mainet1
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet2
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet3
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet4
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet5
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet6
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+        <tr>
+            <td>Ethereum mainet7
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+
+        <tr>
+            <td>Ethereum mainet8
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+
+        <tr>
+            <td>Ethereum mainet9
+            </td>
+            <td>
+                500 BUSD
+            </td>
+            <td>Polkadot</td>
+            <td>
+                456.890 BUSD
+            </td>
+            <td>19 secs ago</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+    <ul class="pagination"></ul>
+</div>
+
+<script>
+    let thisPage = 1;
+    let limit = 5;
+    let list = document.querySelectorAll('#table tbody tr');
+
+    function loadItem() {
+        let beginGet = limit * (thisPage - 1);
+        let endGet = limit * thisPage - 1;
+
+        list.forEach((item, key) => {
+            if (key >= beginGet && key <= endGet) {
+                item.style.display = 'table-row';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        listPage();
+    }
+
+    function listPage() {
+        let count = Math.ceil(list.length / limit);
+        const pagination = document.querySelector('.pagination');
+        pagination.innerHTML = '';
+
+        if (thisPage !== 1) {
+            let prev = document.createElement('a');
+            prev.href = "#";
+            prev.innerText = '<';
+            prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
+            pagination.appendChild(prev);
+        }
+
+        for (let i = 1; i <= count; i++) {
+            let newPage = document.createElement('a');
+            newPage.href = "#";
+            newPage.innerText = i;
+            if (i === thisPage) {
+                newPage.classList.add('active');
+            }
+            newPage.setAttribute('onclick', "changePage(" + i + ")");
+            pagination.appendChild(newPage);
+        }
+
+        if (thisPage !== count) {
+            let next = document.createElement('a');
+            next.href = "#";
+            next.innerText = '>';
+            next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
+            pagination.appendChild(next);
+        }
+    }
+
+    function changePage(i) {
+        thisPage = i;
+        loadItem();
+    }
+
+    loadItem();
+
+
+</script>
+</body>
+</html>
