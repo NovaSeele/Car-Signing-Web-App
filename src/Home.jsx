@@ -2,7 +2,8 @@ import React from "react";
 import { NavBar } from "./components/navBar/NavBar";
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 import "./Home.css";
-
+import carjpg from "./assets/car.jpg";
+import xejpg from "./assets/xe.jpg";
 export const Home = () => {
   return (
     <div className="Home">
@@ -40,13 +41,13 @@ export const Home = () => {
                 </div>
               </div>
               <div className="image-block-right">
-                <img src="src/assets/car.jpg" alt="Pic" width="100%" height="100%" />
+                <img src={carjpg} alt="Pic" width="100%" height="100%" />
               </div>
             </div>
 
             <div className="grid-content-right">
               <div className="image-block-left">
-                <img src="src/assets/xe.jpg" alt="Pic" width="100%" height="100%" />
+                <img src={xejpg} alt="Pic" width="100%" height="100%" />
               </div>
               <div className="right-block">
                 <div className="block-text">
