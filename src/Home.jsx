@@ -47,7 +47,7 @@ export const Home = () => {
               </div>
               <div className="image-block-right">
                 <img
-                  src="src/assets/car.jpg"
+                  src={carjpg}
                   alt="Pic"
                   width="100%"
                   height="100%"
@@ -58,7 +58,7 @@ export const Home = () => {
             <div className="grid-content-right">
               <div className="image-block-left">
                 <img
-                  src="src/assets/xe.jpg"
+                  src={xejpg}
                   alt="Pic"
                   width="100%"
                   height="100%"
