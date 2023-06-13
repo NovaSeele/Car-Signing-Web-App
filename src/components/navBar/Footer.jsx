@@ -6,7 +6,7 @@ export const Footer = () => {
       <footer className="footer-distributed">
         <div className="footer-left">
           <h3>
-            Register<span>Total</span>
+            Registry<span>Total</span>
           </h3>
           <p className="footer-links">
             <a href="#" className="link-1">
