@@ -51,27 +51,30 @@ export const CompanyForm = () => {
               </div>
             </div>
             <div className="gender-details">
-              <input type="radio" name="form-radio" id="registration-dot-1" />
-              <input type="radio" name="form-radio" id="registration-dot-2" />
-              <input type="radio" name="form-radio" id="registration-dot-3" />
-              <input type="radio" name="form-radio" id="registration-dot-4" />
               <span className="gender-title">Kiểm Tra các Loại Giấy Tờ</span>
               <div className="category">
-                <label htmlFor="registration-dot-1">
-                  <span className="dot one"></span>
-                  <span className="form-radio">Giấy tờ 1</span>
+                <label class="checkbox-container">
+                  One
+                  <input type="checkbox"></input>
+                  <span class="checkmark"></span>
                 </label>
-                <label htmlFor="registration-dot-2">
-                  <span className="dot two"></span>
-                  <span className="form-radio">Giấy tờ 2</span>
+
+                <label class="checkbox-container">
+                  Two
+                  <input type="checkbox"></input>
+                  <span class="checkmark"></span>
                 </label>
-                <label htmlFor="registration-dot-3">
-                  <span className="dot three"></span>
-                  <span className="form-radio">Giấy tờ 2</span>
+
+                <label class="checkbox-container">
+                  Three
+                  <input type="checkbox"></input>
+                  <span class="checkmark"></span>
                 </label>
-                <label htmlFor="registration-dot-4">
-                  <span className="dot four"></span>
-                  <span className="form-radio">Giấy tờ 2</span>
+
+                <label class="checkbox-container">
+                  Four
+                  <input type="checkbox"></input>
+                  <span class="checkmark"></span>
                 </label>
               </div>
             </div>

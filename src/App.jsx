@@ -13,7 +13,6 @@ import { RegistrationCenter } from "./components/information/RegistrationCenter"
 
 
 {/* Import thing in the form input file */}
-import { RegForm } from "./components/form input/RegForm";
 import { FormMain } from "./components/form input/FormMain";
 import { OwnerForm } from "./components/form input/OwnerForm";
 import { CompanyForm } from "./components/form input/CompanyForm";
@@ -37,7 +36,6 @@ function App() {
           <Route path="/userinfo" element={<UserInfo />} />
           <Route path="/carinfo" element={<CarInfo />} />
           <Route path="/registrationcenter" element={<RegistrationCenter />} />
-          <Route path="/form" element={<RegForm />} />
           <Route path="/formmain" element={<FormMain />} />
           <Route path="/ownerform" element={<OwnerForm />} />
           <Route path="/companyform" element={<CompanyForm />} />

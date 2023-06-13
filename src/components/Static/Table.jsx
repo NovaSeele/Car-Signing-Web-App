@@ -196,8 +196,12 @@ export const Table = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Honda Accord</td>
-                <td>
+                <td className="profile-link">
+                  <Link to="/carinfo">
+                    <strong>Honda Accord</strong>
+                  </Link>
+                </td>
+                <td className="profile-link">
                   <Link to="/userinfo">
                     <strong>Seele Vollerei</strong>
                   </Link>
@@ -212,8 +216,12 @@ export const Table = () => {
               </tr>
               <tr>
                 <td>2</td>
-                <td>Toyota Camry</td>
-                <td>
+                <td className="profile-link">
+                  <Link to="/carinfo">
+                    <strong>BMW Idk</strong>
+                  </Link>
+                </td>
+                <td className="profile-link">
                   <Link to="/userinfo">
                     <strong>Seele Vollerei</strong>
                   </Link>
@@ -228,10 +236,12 @@ export const Table = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td>
-                  <Link to="/carinfo">Toyota Camry</Link>
+                <td className="profile-link">
+                  <Link to="/carinfo">
+                    <strong>Honda Accord</strong>
+                  </Link>
                 </td>
-                <td>
+                <td className="profile-link">
                   <Link to="/userinfo">
                     <strong>Seele Vollerei</strong>
                   </Link>

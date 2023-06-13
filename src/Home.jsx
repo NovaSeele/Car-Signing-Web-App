@@ -3,6 +3,8 @@ import { NavBar } from "./components/navBar/NavBar";
 import { Footer } from "./components/navBar/Footer";
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 import "./Home.css";
+import carjpg from "./assets/car.jpg";
+import xejpg from "./assets/xe.jpg";
 
 export const Home = () => {
   return (
