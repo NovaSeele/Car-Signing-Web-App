@@ -134,4 +134,13 @@ ul {
 .close-icon i {
     display: block;
 }
+
+@media(max-width: 500px) {
+    .logo span {
+        font-size: 1.3rem;
+    }
+    .logo i {
+        display: none;
+    }
+}
     
