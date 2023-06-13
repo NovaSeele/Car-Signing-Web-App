@@ -46,14 +46,14 @@
 .main-content {
     width: auto;
     overflow: visible;
-    background-color: aqua;
+    /* background-color: aqua; */
     text-align: left;
     margin-left: auto;
     margin-right: auto
 }
 
 .relax-content {
-    background-color: aquamarine;
+    /* background-color: aquamarine;     */
     text-align: center;
     justify-content: center;
     margin-bottom: 85px;
@@ -77,7 +77,7 @@
 
 .home-content {
     margin: 80px 120px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .grid-content-left {
@@ -122,8 +122,43 @@
     padding: 25px 12px;
 }
 
+.block-button {
+    background-color: #2439b0;
+    padding: 15px 32px;
+        
+        border: none;
+        color: white;
+        
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-size: 200%;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+}
+
+.block-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.block-button:hover {
+    background-color: #5255fb;
+    transition: all 0.5s ease;
+}
+
+.block-button span:hover {
+    color: white;
+}
+
 .left-block {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     grid-gap: 80px;
     width: auto;
     text-align: left;
@@ -131,7 +166,7 @@
 }
 
 .right-block {
-    background-color: brown;
+    /* background-color: brown; */
     grid-gap: 80px;
     width: auto;
     text-align: right;
@@ -146,6 +181,7 @@
     text-align: left;
     font: bold 16px sans-serif;
     padding: 25px 50px;
+    margin-top: 100px;
 }
 
 .footer-distributed .footer-left,

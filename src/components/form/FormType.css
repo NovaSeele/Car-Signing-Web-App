@@ -182,6 +182,7 @@ a:hover {
 }
 
 .cancel-btn {
+    background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
     display: block;
     height: 40px;
     width: 40%;
@@ -189,11 +190,10 @@ a:hover {
     border-radius: 20px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
+    
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;
