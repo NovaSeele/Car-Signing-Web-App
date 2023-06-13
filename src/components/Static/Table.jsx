@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Table.css";
+import { TableRow } from "./TableRow";
 
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 
 export const Table = () => {
+
+  const [inspectionData, setInspectionData] = useState([]);
+  
   useEffect(() => {
     const search = document.querySelector(".input-group input");
     const table_rows = document.querySelectorAll("tbody tr");
     const table_headings = document.querySelectorAll("thead th");
-    
 
     /// Update the data count in the table header
     const updateDataCount = () => {
@@ -110,6 +113,78 @@ export const Table = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/inspection/`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("access")}`,
+            }
+          });
+        if (response.ok) {
+          const data = await response.json();
+          setInspectionData(data);
+          console.log(inspectionData);
+        } else {
+          console.error("Failed to fetch inspection data.");
+        }
+      } catch (error) {
+        console.error("Error while fetching inspection data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const headers = 
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      }
+    }
+    const fetchData = async () => {
+      try {
+        const inspectionResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/inspection/`,headers);
+        const ownerResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/owner/`,headers);
+        const vehicleResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/vehicle/`,headers);
+  
+        if (inspectionResponse.ok && ownerResponse.ok && vehicleResponse.ok) {
+          const inspectionData = await inspectionResponse.json();
+          const ownerData = await ownerResponse.json();
+          const vehicleData = await vehicleResponse.json();
+  
+          const updatedInspectionData = inspectionData.map((data) => {
+            const ownerId = data.owner_id;
+            const vehicleId = data.vehicle_id;
+  
+            const ownerInfo = ownerData.find((owner) => owner.owner_id === ownerId);
+            const vehicleInfo = vehicleData.find((vehicle) => vehicle.vehicle_id === vehicleId);
+  
+            return {
+              ...data,
+              ownerName: ownerInfo ? ownerInfo.owner_info : "",
+              vehicleName: vehicleInfo ? vehicleInfo.model : "",
+            };
+          });
+  
+          setInspectionData(updatedInspectionData);
+        } else {
+          console.error("Failed to fetch inspection data, owner data, or vehicle data.");
+          window.location.href = "/login";
+        }
+      } catch (error) {
+        console.error("Error while fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   return (
     <div className="Table">
@@ -194,66 +269,21 @@ export const Table = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td className="profile-link">
-                  <Link to="/carinfo">
-                    <strong>Honda Accord</strong>
-                  </Link>
-                </td>
-                <td className="profile-link">
-                  <Link to="/userinfo">
-                    <strong>Seele Vollerei</strong>
-                  </Link>
-                </td>
-                <td>29A-12345</td>
-                <td>
-                  <p className="status signed">Signed</p>
-                </td>
-                <td>7/2/2021</td>
-                <td>18/10/2023</td>
-                <td>xx ngày</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td className="profile-link">
-                  <Link to="/carinfo">
-                    <strong>BMW Idk</strong>
-                  </Link>
-                </td>
-                <td className="profile-link">
-                  <Link to="/userinfo">
-                    <strong>Seele Vollerei</strong>
-                  </Link>
-                </td>
-                <td>29A-12345</td>
-                <td>
-                  <p className="status pending">Pending</p>
-                </td>
-                <td>7/2/2021</td>
-                <td>18/10/2023</td>
-                <td>xx ngày</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td className="profile-link">
-                  <Link to="/carinfo">
-                    <strong>Honda Accord</strong>
-                  </Link>
-                </td>
-                <td className="profile-link">
-                  <Link to="/userinfo">
-                    <strong>Seele Vollerei</strong>
-                  </Link>
-                </td>
-                <td>29A-12345</td>
-                <td>
-                  <p className="status not-signed">Not Signed</p>
-                </td>
-                <td>7/2/2021</td>
-                <td>18/10/2023</td>
-                <td>xx ngày</td>
-              </tr>
+              {/* fetch data here */}
+              {inspectionData.map((data) => (
+                <TableRow
+                  key={data.inspection_id}
+                  id={data.inspection_id}
+                  name={data.vehicleName}
+                  owner={data.ownerName}
+                  license={data.certificate_no}
+                  status={data.status}
+                  start={data.inspection_date}
+                  end={data.expiration_date}
+                  owner_id={data.owner_id}
+                  vehicle_id={data.vehicle_id}
+                />
+              ))}
             </tbody>
           </table>
         </section>

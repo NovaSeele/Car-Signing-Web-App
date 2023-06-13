@@ -1,17 +1,57 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { NavBar } from "../navBar/NavBar";
 import { Footer } from "../navBar/Footer";
 import "./Info.css";
 
 export const UserInfo = () => {
+
+  const [ownerData, setOwnerData] = useState({});
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const owner_id = searchParams.get("owner_id");
+  console.log(owner_id);
+
+  useEffect(() => {
+    const headers = 
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      }
+    }
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/inspection/owner/${owner_id}/`,headers);
+
+        if (response.ok) {
+          const data = await response.json();
+  
+          setOwnerData(data);
+          console.log(data);
+        } else {
+          console.error("Failed to fetch inspection data, owner data, or vehicle data.");
+          window.location.href = "/login";
+        }
+      } catch (error) {
+        console.error("Error while fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
   return (
     <div className="User_Info">
       <NavBar />
       <div className="UserInfo">
         <div className="left-info">
           <img src="https://i.imgur.com/m7MiPOa.jpg" alt="user" width="100" />
-          <h4>Name</h4>
+          <h4>{ownerData.owner_info}</h4>
           <p>Name&apos;s description</p>
         </div>
         <div className="right-info">
@@ -20,15 +60,11 @@ export const UserInfo = () => {
             <div className="info_data">
               <div className="data">
                 <h4>Địa chỉ</h4>
-                <p>Địa chỉ nhà</p>
+                <p>{ownerData.province}</p>
               </div>
               <div className="data">
                 <h4>Email</h4>
                 <p>novaseele@gmail.com</p>
-              </div>
-              <div className="data">
-                <h4>Thông tin khác</h4>
-                <p>Các thông tin khác</p>
               </div>
             </div>
           </div>
@@ -39,10 +75,6 @@ export const UserInfo = () => {
               <div className="data">
                 <h4>Danh sách xe</h4>
                 <p>Car Detail</p>
-              </div>
-              <div className="data">
-                <h4>Nơi đăng kiểm</h4>
-                <p>Chi tiết</p>
               </div>
             </div>
           </div>

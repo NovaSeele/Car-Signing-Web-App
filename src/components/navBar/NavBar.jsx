@@ -40,6 +40,9 @@ export const NavBar = () => {
           // Handle error response
           // For example, if the token is invalid or expired
           // You can redirect to the login page or display an error message
+          setTimeout(() => {
+            window.location.href = "/login";
+          }, 1000);
         }
       } catch (error) {
         console.log("Error fetching user data:", error);
