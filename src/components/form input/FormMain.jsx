@@ -1,7 +1,6 @@
 import React from "react";
 import { NavBar } from "../navBar/NavBar";
 import { Footer } from "../navBar/Footer";
-import { RegForm } from "./RegForm";
 import { BrowserRouter as Route, Link, Routes } from "react-router-dom";
 import "./RegForm.css";
 import { OwnerForm } from "./OwnerForm";
