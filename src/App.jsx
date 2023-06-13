@@ -17,6 +17,7 @@ import { RegForm } from "./components/form input/RegForm";
 import { FormMain } from "./components/form input/FormMain";
 import { OwnerForm } from "./components/form input/OwnerForm";
 import { CompanyForm } from "./components/form input/CompanyForm";
+import { CarForm } from "./components/form input/CarForm";
 
 import { InfoTable } from "./components/Static/InfoTable";
 
@@ -25,7 +26,6 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,6 +41,7 @@ function App() {
           <Route path="/formmain" element={<FormMain />} />
           <Route path="/ownerform" element={<OwnerForm />} />
           <Route path="/companyform" element={<CompanyForm />} />
+          <Route path="/carform" element={<CarForm />} />
         </Routes>
       </Router>
     </div>

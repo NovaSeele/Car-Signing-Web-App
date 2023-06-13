@@ -1,7 +1,4 @@
 .FormMain {
-
-
-
     margin-top: 100px;
     width: auto;
     height: auto;
@@ -20,8 +17,12 @@
     margin-top: 700px;
 }
 
+.CarForm {
+    margin-top: 700px;
+}
+
 .registration-main {
-    max-width: 700px;
+    max-width: 100vh;
     width: 100%;
     background-color: #fff;
     padding: 25px 30px;
@@ -30,7 +31,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 5%);
 }
 
 .registration-title {
@@ -142,11 +143,11 @@ input[type="radio"] {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: #32557f;
 }
 
 .reg-form-content .registration-button input:hover {
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    background: #4677b3;
 }
 
 @media(max-width: 584px) {
@@ -179,16 +180,13 @@ input[type="radio"] {
     }
 }
 
-
-
 .warpper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    
-
+    justify-content: left;
 }
+
 
 .tab {
     cursor: pointer;

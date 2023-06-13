@@ -228,7 +228,9 @@ export const Table = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td>Toyota Corolla</td>
+                <td>
+                  <Link to="/carinfo">Toyota Camry</Link>
+                </td>
                 <td>
                   <Link to="/userinfo">
                     <strong>Seele Vollerei</strong>
