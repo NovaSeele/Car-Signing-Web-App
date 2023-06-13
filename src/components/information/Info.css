@@ -1,19 +1,72 @@
 .UserInfo,
 .CarInfo,
 .RegCenter {
-    width: 60%;
+    width: 80%;
     height: 70%;
     display: flex;
-    transform: translate(35%, 50%);
+    transform: translate(15%, 50%);
     justify-content: center;
     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
-    margin-bottom: 400px;
+    margin-bottom: 300px;
     margin-top: -50px;
 }
 
+@media (max-width: 800px) {
+
+    .UserInfo,
+    .CarInfo,
+    .RegCenter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -30%;
+        margin-bottom: 90%;
+    }
+
+    .left-info {
+        width: 100%;
+
+    }
+
+    .right-info {
+        display: flex;
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+
+    .UserInfo,
+    .CarInfo,
+    .RegCenter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -100%;
+        margin-bottom: 150%;
+    }
+
+    .left-info {
+        width: 100%;
+
+    }
+
+    .right-info {
+        display: flex;
+        width: 100%;
+    }
+
+
+}
+
+
 .left-info {
     width: 35%;
-    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    background: linear-gradient(to right, #1bac01, #01df22);
     padding: 30px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -39,7 +92,7 @@
     font-size: 12px;
 }
 
-.right-info{
+.right-info {
     width: 65%;
     background: #f2f2f2;
     padding: 25px 25px;
@@ -63,7 +116,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
 
 .data {
